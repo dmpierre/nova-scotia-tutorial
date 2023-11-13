@@ -11,8 +11,13 @@ use serde_json::json;
 fn run_test() {
     /*
     1. Define the curve cycle that we want to use.
-    We will use the bn256/grumpkin curve cycle
+    We will use the bn256/grumpkin curve cycle.
     */
+    type G1 = provider::bn256_grumpkin::bn256::Point;
+    type G2 = provider::bn256_grumpkin::grumpkin::Point;
+
+    // type G1 = _; look into the provider module
+    // type G2 = _;
 
     /*
     2. Load the r1cs and witness generator files.
@@ -37,7 +42,7 @@ fn run_test() {
     */
 
     /*
-    4. Set the public inputs that we are going to use
+    4. Set the starting public inputs that we are going to use
     */
 
     /*
@@ -57,7 +62,12 @@ fn run_test() {
     */
 
     /*
+    The proof is quite large... so we will compress it
     9. Generate a compressed snark using SPARTAN
+    */
+
+    /*
+    10. Verify the compressed snark
     */
 
     /*
