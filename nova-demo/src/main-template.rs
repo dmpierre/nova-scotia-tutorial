@@ -10,18 +10,18 @@ use serde_json::json;
 
 fn run_test() {
     /*
-    Define the curve cycle that we want to use.
+    1. Define the curve cycle that we want to use.
     We will use the bn256/grumpkin curve cycle
     */
 
     /*
-    Load the r1cs and witness generator files.
+    2. Load the r1cs and witness generator files.
     */
 
     /*
-    Setuping the private auxiliary inputs that we will
-    use when folding. They are two public inputs at 
-    each folding steps (step_in[0], step_in[1]): 
+    3. Setuping the private auxiliary inputs that we will
+    use when folding. They are two public inputs at
+    each folding steps (step_in[0], step_in[1]):
         step_out[0] <== step_in[0] + adder;
         step_out[1] <== step_in[0] + step_in[1];
 
@@ -37,30 +37,43 @@ fn run_test() {
     */
 
     /*
-    Set the public inputs that we are going to use
+    4. Set the public inputs that we are going to use
     */
 
     /*
-    Create the public parameters for the recursive snark.
+    5. Create the public parameters for the recursive snark.
     */
 
     /*
-    We can print some info about the recursive snark that we are building
+    6. We can print some info about the recursive snark that we are building
     */
 
     /*
-    Create the recursive snark.
+    7. Create the recursive snark.
     */
 
     /*
-    Verify it
+    8. Verify it
     */
 
     /*
-    Generate a compressed snark using SPARTAN
+    9. Generate a compressed snark using SPARTAN
     */
 
-
+    /*
+    Ensure that you get the following output in your terminal
+    RecursiveSNARK::verify: Ok(([
+        0x0000000000000000000000000000000000000000000000000000000000000014,
+        0x0000000000000000000000000000000000000000000000000000000000000046],
+        [0x0000000000000000000000000000000000000000000000000000000000000000]
+    ))
+    */
 }
 
-fn main() {}
+fn main() {
+    let cur_dir = env::current_dir().unwrap();
+    let circuit_filepath = "circuits/main.r1cs";
+    let witness_gen_filepath = "circuits/main_js/main.wasm";
+
+    run_test();
+}
